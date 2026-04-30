@@ -1,6 +1,6 @@
 # Empowered Action: Infant Mortality Rate Study
 ## The Problem
-According to the Annual Health Survey in India, 9 states were identified as "lagging behind" in terms of public health. Infant Mortality Rate (IMR) is a key represetation of the public health for a given region. Thus, the problem was to identify the greatest influences over IMR.
+According to the Annual Health Survey in India, 9 states were identified as "lagging behind" in terms of public health. Infant Mortality Rate (IMR) is a key represetation of the public health for a given region. Thus, the problem was to identify the greatest influences over IMR. \
 Why this matters: Identifying the contributing factors to IMR can help develop district-specific plan for improving public health and reducing infant deaths.
 
 ## Project Overview
@@ -17,7 +17,7 @@ Why this matters: Identifying the contributing factors to IMR can help develop d
 - Develop a preprocessing pipeline to reduce dimensionality while retaining feature identities
 - Develop a predictive model
 - Deploy the model
-  - Incorporate Explainable AI and Agentic AI for interpretation and transparency /
+  - Incorporate Explainable AI and Agentic AI for interpretation and transparency
 
 **Key Results:**
 - Produced a model with 86% R<sup>2</sup> and 5.1 RMSE
