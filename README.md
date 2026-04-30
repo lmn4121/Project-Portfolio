@@ -28,6 +28,12 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 ## Data
 **Source:** This data was sourced from [Kaggle](https://www.kaggle.com/datasets/rajanand/key-indicators-of-annual-health-survey) \
 **Type and Shape:**
+- This data is tabular
+- There are 284 rows where each row represents a district in India
+- There are 643 features excluding the target variable
+  - Each feature belongs to one of 26 classifications, indicated by a two letter prefix (AA, BB, etc.)
+**Key Features:**
+
 
 ## Exploratory Data Analysis (EDA)
 ## Data Preprocessing
