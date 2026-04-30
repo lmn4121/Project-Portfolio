@@ -40,8 +40,10 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 ## Key Exploratory Data Analysis (EDA)
 **Target Variable Distribution**
 
-**Multicolineariry**
+**Multicolinearity:**
 ![Heatmap of AA labeled features](https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/AA_heatmap.png)
+- High multicollinearity exists between features with the same prefix label
+   - This displayed a necessity for reducing dimensionality
 
 **Null Values**
 
