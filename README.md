@@ -17,7 +17,10 @@ Why this matters: Identifying the contributing factors to IMR can help develop d
 - Develop a preprocessing pipeline to reduce dimensionality while retaining feature identities
 - Develop a predictive model
 - Deploy the model
-  - Incorporate Explainable AI and Agentic AI for interpretation and transparency
+  - Incorporate Explainable AI and Agentic AI for interpretation and transparency /
+
+**Key Results:**
+- Produced a model with 86% R<sup>2<sup/>
 
 ## Data
 ## Exploratory Data Analysis (EDA)
