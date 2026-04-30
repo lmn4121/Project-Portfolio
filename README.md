@@ -6,7 +6,7 @@ Why this matters: Identifying the contributing factors to IMR can help develop d
 ## Project Overview
 **Goal:** 
 - Identify key contributors to IMR
-- Develop a model that can use indentified features to predict IMR
+- Develop a model that can use indentified features to predict IMR \
 **Approach:**
 - Explore relationships between the features and the target variable
 - Preprocess the data
