@@ -37,7 +37,16 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 **Key Features:**
 
 
-## Exploratory Data Analysis (EDA)
+## Key Exploratory Data Analysis (EDA)
+**Target Variable Distribution**
+
+**Multicolineariry**
+![Heatmap of AA labeled features](https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/AA_heatmap.png)
+
+**Null Values**
+
+**Data Leakage**
+
 ## Data Preprocessing
 ## Modeling Approach
 ## Model Training
