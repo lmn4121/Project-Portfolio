@@ -20,7 +20,7 @@ Why this matters: Identifying the contributing factors to IMR can help develop d
   - Incorporate Explainable AI and Agentic AI for interpretation and transparency /
 
 **Key Results:**
-- Produced a model with 86% R<sup>2<sup/> and 5.1 RMSE
+- Produced a model with 86% R<sup>2<sup> and 5.1 RMSE
 - Identified key features with clear a clear influence on IMR
   - Reduced necessary features from 640 to 50 for a full mode or 14 for a smaller model
 - Developed a deployment app that can make and interpret predictions to develop a solution for reducing IMR.
