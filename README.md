@@ -26,7 +26,8 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 - Developed a deployment app that can make and interpret predictions to develop a solution for reducing IMR.
 
 ## Data
-**Source:** This data was sourced from [Kaggle](https://www.kaggle.com/datasets/rajanand/key-indicators-of-annual-health-survey) \
+**Source:** This data was sourced from [Kaggle](https://www.kaggle.com/datasets/rajanand/key-indicators-of-annual-health-survey) 
+
 **Type and Shape:**
 - This data is tabular
 - There are 284 rows where each row represents a district in India
