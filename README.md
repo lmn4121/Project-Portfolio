@@ -102,7 +102,22 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
   - These handfull of districts were removed
  
 **Feature Selection:**
+- Due to the high dimensionality and extreme imbalance between rows and columns, feature selection
+  was the most crucial aspect of the project
+- Feature selection was split into a two part strategy:
 
+*Part 1:*
+In order to retain feature identities, we wanted to avoid PCA at the start, however, the multicollinearity identified in EDA would pose a challange for feature selection.
+- To avoid the multicollinearity issue, the featureset was split into 20 subgroups
+  - Because most multicollinearity existed between features with the same prefix (AA, BB, etc.), each group
+    was made to minimize the number of features with the same prefix.
+- After splitting the features into groups, forward selection was run on each group individually, and the
+  top features from each group were aggregated back into a full featureset
+- The forward selection process reduced the featureset to 50 features
+
+*Part 2:*
+Numerous strategies were attempted, but the most successful strategy was a combination of agglomerative clustering and PCA.
+- 
 
 ## Modeling Approach
 ## Model Training
