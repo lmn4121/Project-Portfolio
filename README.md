@@ -249,8 +249,12 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 - In the deployment app, combining prediction SHAP analysis with agentic websearching and interpretation can provide
   a district-specific explanation on what influences IMR and suggestions on how to lower it, thus improving public health.
 - A demonstration of the agentic AI and explainable AI integration can be seen [here](https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/Deployment%20Agent%20Demo.pdf)
+- The full deployment app is available in the deployment folder
+  - Requires an API key
 
 ## Conclusion
+
+
 ## Future Work
 ## How to Run
 ## Repository Structure
