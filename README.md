@@ -39,7 +39,7 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 
 ## Key Exploratory Data Analysis (EDA)
 **Target Variable Distribution**
-![Distribution of total IMR (target variable)](https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/target_distribution.png)
+![<img width=70%/>](https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/target_distribution.png)
 
 **Multicolinearity:**
 ![Heatmap of AA labeled features](https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/AA_heatmap.png)
