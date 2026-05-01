@@ -39,8 +39,9 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 
 ## Key Exploratory Data Analysis (EDA)
 **Target Variable Distribution** /
-
-<img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/target_distribution.png">
+- The target variable (total IMR) was normally distributed with a mean and median ~55
+  - This implied that there shouldn't be a major outlier problem within the target variable
+<img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/target_distribution.png" width=70%>
 
 **Multicolinearity:**
 - High multicollinearity exists between features with the same prefix label
@@ -53,10 +54,15 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 - Many features were missing information for the same districts
 - The missingness matrix below shows uniform missingness across numerous features
   - This makes it hard to impute values based on the relationships between features
+  - Furthermore, there are not enough rows to justify dropping them
 <img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/msno_44.png">
 
 **Data Leakage**
-
+- From the multicollinearity problem above, it makes sense that their would be features that share the same prefix /
+  as the target variable and are, therefore, highly correlated with the target variable
+- The table below shows the top 10 features based on correlation with total IMR
+  - Numerous other IMR and infant death features can be identified, which have near perfect correlation with the target variable
+  - This presented a data leakage problem
 <img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/target_correlations.png" width=50%>
 
 ## Data Preprocessing
