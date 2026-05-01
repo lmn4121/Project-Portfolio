@@ -42,17 +42,20 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 
 <img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/target_distribution.png">
 
-**Multicolinearity:** /
-
-<img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/AA_heatmap.png" width=70%>
+**Multicolinearity:**
 - High multicollinearity exists between features with the same prefix label
    - This displayed a necessity for reducing dimensionality
+- The heatmap below displays the correlation between variables with the AA prefix
+  - Numerous white and light red spots indicate high correlation
+<img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/AA_heatmap.png" width=70%>
 
-**Null Values** /
-
+**Null Values**
+- Many features were missing information for the same districts
+- The missingness matrix below shows uniform missingness across numerous features
+  - This makes it hard to impute values based on the relationships between features
 <img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/msno_44.png">
 
-**Data Leakage** /
+**Data Leakage**
 
 <img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/target_correlations.png" width=50%>
 
