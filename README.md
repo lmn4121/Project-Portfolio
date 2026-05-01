@@ -188,7 +188,7 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 *Additional Model: ANN Mini:*
 - Shares the same structure and training setup as the full ANN model
 - Instead of using the 14 clusters compressed into components,
-  it uses to best feature from every cluster
+  it uses the single best feature from every cluster (based on correlation)
 - In summary, ANN mini uses 14 features that retain their original identities inseaad of
   50 features compressed into components
   - Only requires 14 inputs instead of 50
