@@ -38,19 +38,23 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 
 
 ## Key Exploratory Data Analysis (EDA)
-**Target Variable Distribution**
-![](https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/target_distribution.png)
+**Target Variable Distribution** /
 
-**Multicolinearity:**
-![Heatmap of AA labeled features](https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/AA_heatmap.png)
+<img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/target_distribution.png">
+
+**Multicolinearity:** /
+
+<img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/AA_heatmap.png" width=70%>
 - High multicollinearity exists between features with the same prefix label
    - This displayed a necessity for reducing dimensionality
 
-**Null Values**
-![Missingness matrix for features with 44 null values](https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/msno_44.png)
+**Null Values** /
 
-**Data Leakage**
-<img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/target_correlations.png" width=50%>]
+<img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/msno_44.png">
+
+**Data Leakage** /
+
+<img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/target_correlations.png" width=50%>
 
 ## Data Preprocessing
 ## Modeling Approach
