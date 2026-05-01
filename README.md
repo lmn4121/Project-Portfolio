@@ -154,9 +154,30 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
     - 1 output layer
 
 ## Model Training
-*ANN training structure:*
-- 
+**Strongest Linear Model:**
+- Adaptive Boosting
+  - 100 estimators
+  - learning rate: 0.001
+  - Base model: Standard Linear Regression
+ 
+**Strongest Tree Model:**
+- Random Forest
+  - Max depth: 3
+  - Number of estimators: 10
+
+**ANN Training Structure:**
+- Loss Functions: MSE
+- Optimizer: ADAM
+  - starting learning rate of 0.0005
+  - learning rate reduced to 0.0001 on the 5,000th epoch using a step scheduler
+- Total Epochs: 10,000
+
 ## Results
+**Training Results**
+| Model | R<sup>2</sup> | Adjusted R<sup>2</sup> | RMSE |
+|-------|---------------|------------------------|------|
+|  ANN  | 0.86          | 0                      | 5.1  |
+
 ## Model Interpretation
 ## Key Insights
 ## Conclusion
