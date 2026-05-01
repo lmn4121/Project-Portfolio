@@ -414,8 +414,10 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 
 **results folder:**
 - Individual results for the deployed models
-  - Full ANN
-  - Mini ANN
+  - final_ann_metrics.png
+    - Metrics for the full ANN model
+  - mini_ann_metrics.png
+    - Metrics for the mini ANN model
 - Additional result tables for individual models can be seen in the Final_Strategy_and_Modeling.ipynb notebook
 
 ## Requirements
