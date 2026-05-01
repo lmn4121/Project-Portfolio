@@ -211,10 +211,18 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 | Random Forest | 0.71 | 0.65 | 7.7 |
 
 ## Model Interpretation
+**Global Explanation:**
 - Using SHapely Additive exPlanations (SHAP), each features impact on the predictions can be interpreted
 - The feature importance is similar across all models, so here we emphasize the ANN results
-- a
+- Below is a SHAP beeswarm plot
+  - Each feature is listed with a summary of its impact on the model's predictions
+  - From the plot, Neo Natal Mortality, Death Rate, BCG vaccination coverage, check ups, and state name
+    have the biggest impact on Infant Mortality Rate
+  - There is also contribution from features related to population density and government assistance
+- The general feature impacts align with research and expectation, which validates the models learned relationships
  <img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/ann_beeswarm.png" width=50%>
+
+ **Local Explanation:**
 
 ## Key Insights
 ## Conclusion
