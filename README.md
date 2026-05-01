@@ -127,7 +127,7 @@ In order to retain feature identities, we wanted to avoid PCA at the start, howe
 
 *End Result:*
 - 14 components that made up the featureset
-- In other words, the featureset was reduced from 643 ➡️ 50 ➡️ 14
+- In other words, the featureset was reduced from 643 &rarr; 50 &rarr; 14
 
 ## Modeling Approach
 ## Model Training
