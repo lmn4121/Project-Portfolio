@@ -354,8 +354,8 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 - streamlit_app.py
   - The main app
   - Requires two updates for usage:
-    - A Google Gemini API key from (Google AI Studio)[https://aistudio.google.com/]
-    - A Tavily API key from (Tavily)[https://app.tavily.com/]
+    - A Google Gemini API key from [Google AI Studio](https://aistudio.google.com/)
+    - A Tavily API key from [Tavily](https://app.tavily.com/)
     - Both of these API keys can be retrieved for free
 - All other files are dependencies used by the app
   - Preprocesser tools
