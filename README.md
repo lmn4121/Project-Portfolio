@@ -116,8 +116,18 @@ In order to retain feature identities, we wanted to avoid PCA at the start, howe
 - The forward selection process reduced the featureset to 50 features
 
 *Part 2:*
-Numerous strategies were attempted, but the most successful strategy was a combination of agglomerative clustering and PCA.
-- 
+- Numerous strategies were attempted, but the most successful strategy was a combination of agglomerative clustering and PCA.
+- After the forward selection method, the remaining 50 featues retained their multicollinearity
+- Agglomerative clustering was used to cluster related features together based on the correlation matrix
+  - Result: 14 clusters of related features
+- PCA models were then used on each individual cluster to compress them down into single components
+  - Each cluster became one principal component
+  - Because the features in each cluster were known, each component could be assigned an identity based on
+    the features that contributed to it
+
+*End Result:*
+- 14 components that made up the featureset
+- In other words, the featureset was reduced from 643 -> 50 -> 14
 
 ## Modeling Approach
 ## Model Training
