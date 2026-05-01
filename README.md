@@ -173,10 +173,32 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 - Total Epochs: 10,000
 
 ## Results
+**Evaluation Metrics:**
+- R<sup>2</sup>
+  - Target variance explained by the model
+  - Acts as a general accuracy
+- Adjusted R<sup>2</sup>:
+  - Similar to R<sup>2</sup>, but accounts for dimensionality
+- Root Mean Squared Error:
+  - Average prediction error
+  - Allows for better comparison between models
+  - Scale of IMR is from 0-100
+  - Average IMR for this data is ~56
+ 
+*Additional Model: ANN Mini:*
+- Shares the same structure and training setup as the full ANN model
+- Instead of using the 14 clusters compressed into components,
+  it uses to best feature from every cluster
+- In summary, ANN mini uses 14 features that retain their original identities inseaad of
+  50 features compressed into components
+  - Only requires 14 inputs instead of 50
+
+
 **Train Results**
 | Model | R<sup>2</sup> | Adjusted R<sup>2</sup> | RMSE |
 |-------|---------------|------------------------|------|
 | ANN | 0.86 | 0.85 | 5.1  |
+| ANN Mini | 0.84 | 0.82 | 5.5 |
 | AdaBoost Linear Model| 0.83 | 0.81 | 5.7 |
 | Random Forest | 0.80 | 0.78 | 6.2 |
 
@@ -184,6 +206,7 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 | Model | R<sup>2</sup> | Adjusted R<sup>2</sup> | RMSE |
 |-------|---------------|------------------------|------|
 | ANN | 0.87 | 0.85 | 5.1  |
+| ANN Mini | 0.84 | 0.80 | 5.8 |
 | AdaBoost Linear Model| 0.84 | 0.80 | 5.8 |
 | Random Forest | 0.71 | 0.65 | 7.7 |
 
