@@ -357,12 +357,55 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 - Deployment Agent Demo.pdf
   - Example of the agent interpretation outputs from the deployment app
 - ann_beeswarm.png
-  - SHAP beeswarm plot 
+  - SHAP beeswarm plot for the ANN model
+- msno_44.png
+  - Missingness matrix for features missing 44 values
+  - Used to demonstrate the null value pattern
+- target_correlations.png
+  - Table of features with highest the correlation with the target variable
+  - Used to show the data leakage problem
+- target_distribtuion.png
+  - Distribution of the target variable
 
 **models folder:**
+- ann_mini.pth
+  - Mini ANN model that only uses 14 inputs
+- deployment_model.pth
+  - the full ANN model that uses 50 features compressed into 14 components
+- Notes:
+  - These are the models included in the deployment app
+  - Both models are native to PyTorch
 
 **notebooks folder:**
+- EDA_Baseline_Cleaning.ipynb
+  - The first notebook in the series
+  - Contents:
+    - Initial EDA, first baseline model, initial preprocessing
+      - Null imputatation
+      - Data leakage
+- Feature_Selection.ipynb
+  - Second notebook in the series
+  - Notebook for the initial featureset split and forward selection process
+  - Contents:
+    - Two additional second-stage strategies that were not discussed in this report
+      - PCA of all 50 features together
+      - Feature selction based on Lasso coeffients
+      - Some intial modeling
+- Final_Strategy_and_Modeling.ipynb
+  - Third and final notebook in the series
+  - Contents:
+    - Final preprocessing steps
+      - Train/test split, encoding and scaling
+    - The final second-stage feature selection strategy (agglomerative clustering + PCA)
+    - All of the models shown in this report
+    - SHAP explanations for the final ANN model
 
 **results folder:**
+- Individual results for the deployed models
+  - Full ANN
+  - Mini ANN
+- Additional result tables for individual models can be seen in the Final_Strategy_and_Modeling.ipynb notebook
 
 ## Requirements
+- pip install -r requirements.txt
+  - Note: This includes all required modules for both the deployment app and the notebooks
