@@ -173,11 +173,19 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 - Total Epochs: 10,000
 
 ## Results
-**Training Results**
+**Train Results**
 | Model | R<sup>2</sup> | Adjusted R<sup>2</sup> | RMSE |
 |-------|---------------|------------------------|------|
 | ANN | 0.86 | 0.85 | 5.1  |
-| AdaBoost Linear Model| 0.83 | 0.82 | 5.6 |
+| AdaBoost Linear Model| 0.83 | 0.81 | 5.7 |
+| Random Forest | 0.80 | 0.78 | 6.2 |
+
+**Test Results**
+| Model | R<sup>2</sup> | Adjusted R<sup>2</sup> | RMSE |
+|-------|---------------|------------------------|------|
+| ANN | 0.87 | 0.85 | 5.1  |
+| AdaBoost Linear Model| 0.84 | 0.80 | 5.8 |
+| Random Forest | 0.71 | 0.65 | 7.7 |
 
 ## Model Interpretation
 ## Key Insights
