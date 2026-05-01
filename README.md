@@ -252,8 +252,52 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 - The full deployment app is available in the deployment folder
   - Requires an API key
 
-## Conclusion
+## Conclusion/Summary
 
+*Purpose and Goal:*
+- In summary, the goal of this project was to develop a model that could predict Infant Mortality Rate for a given district in India.
+  Because IMR is key indicator of public health, a successful predictive model can be used to:
+  - Understand the key contributors to IMR in a given district
+  - Drive solutions for reducing IMR
+  - Montior the impact of implemented solutions
+ 
+*Project Stages:*
+- This project started with data aquisition from Kaggle
+- EDA:
+  - Distribution of the target variable
+  - Unique patterns in missing values
+  - Multicollinearity across feature groups
+  - Numerous IMR variables contributing to data leakage
+- Preprocessing:
+  - Null values
+    - Remove features with excess missing values
+    - Imputed remaining features with state-wise medians
+  - Data Leakage
+    - Removed features with greater than 0.7 correlation with the target variable
+  - Train/test splitting
+    - 70/30 train/test
+    - Too little data for a validation set
+  - Encoding
+    - Target encoded the state names
+  - Scaling
+    - Robust scaling to work around skewed features
+  - Feature selection
+    - Stage 1:
+      - Split data into subgroups
+      - Apply forward selection on each group
+      - Aggregate the results
+        - 50 remaining features
+    - Stage 2;
+      - Agglomerative clustering of remaining features
+      - PCA compression of each cluster into a its own component
+  - Modeling
+    - Attempted linear, tree-based, and ANN models
+    - Linear models had a balanced fit, but lacked depth
+    - Tree-based models were overfitting
+    - ANN performed the best with a balanced fit and good performance
+  - Deployment
+    - A deployment app was made that combines the predictive model and explainable AI with agentic
+      interpretations to explain how the predictions were made and develop suggestions for reducing IMR in the given region
 
 ## Future Work
 ## How to Run
