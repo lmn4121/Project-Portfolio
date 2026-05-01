@@ -300,8 +300,15 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
       interpretations to explain how the predictions were made and develop suggestions for reducing IMR in the given region
 
 ## Future Work
-
+- Future improvements are possible, but they will likely require more data
+  - Only 196 rows were available for training, which is a major restriction for a neural network
+  - Furthermore, the residual range was still quite high, which indicates that the model may still have some variance
+- The agents in deployment could also be improved
+  - Output restrictions were placed to manage resources
+  - Prompts could be improved to better guide the SHAP explanations
 
 ## How to Run
+
+
 ## Repository Structure
 ## Requirements
