@@ -351,6 +351,13 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 **deployment folder:**
 
 **images folder:**
+- AA_heatmap.png
+  - Heatmap of the features with the AA prefix
+  - Shown in the EDA section
+- Deployment Agent Demo.pdf
+  - Example of the agent interpretation outputs from the deployment app
+- ann_beeswarm.png
+  - SHAP beeswarm plot 
 
 **models folder:**
 
