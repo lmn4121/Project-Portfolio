@@ -214,7 +214,7 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 - Using SHapely Additive exPlanations (SHAP), each features impact on the predictions can be interpreted
 - The feature importance is similar across all models, so here we emphasize the ANN results
 - a
- 
+ <img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/ann_beeswarm.png">
 
 ## Key Insights
 ## Conclusion
