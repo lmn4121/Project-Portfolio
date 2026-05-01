@@ -225,6 +225,28 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
  **Local Explanation:**
 
 ## Key Insights
+**What Worked?**
+*Feature Selection:*
+- The most impactful stage of this project
+- Splitting the features into groups and applying forward selection allowed for:
+  - reducing the featureset to 50
+  - retaining the feature identities
+  - minimizing the impact of multicollinearity
+- Agglomerative clustering + PCA:
+  - further reduced the features to 14 components
+  - each component retains a definition based on the features used to create it (clusters)
+*ANN:*
+- Combined the strengths of linear and nonlinear models while minimizing their weaknesses
+  - One activation function allowed the model to learn more than linear models
+    without overfitting in the same way as tree-based models
+
+**Application:**
+- IMR acts as a representation of a regions general public health
+- Monitoring how the given features impact IMR can drive decisions on how to best improve a regions public health
+  - Because the data is district-wise, predictions can provide insight on district=specific solutions
+- In the deployment app, combining prediction SHAP analysis with agentic websearching and interpretation can provide
+  a district-specific explanation on what influences IMR and suggestions on how to lower it, thus improving public health.
+
 ## Conclusion
 ## Future Work
 ## How to Run
