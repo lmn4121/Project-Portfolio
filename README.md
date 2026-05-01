@@ -226,6 +226,7 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 
 ## Key Insights
 **What Worked?**
+
 *Feature Selection:*
 - The most impactful stage of this project
 - Splitting the features into groups and applying forward selection allowed for:
@@ -234,7 +235,8 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
   - minimizing the impact of multicollinearity
 - Agglomerative clustering + PCA:
   - further reduced the features to 14 components
-  - each component retains a definition based on the features used to create it (clusters)
+  - each component retains a definition based on the features used to create it (clusters
+  
 *ANN:*
 - Combined the strengths of linear and nonlinear models while minimizing their weaknesses
   - One activation function allowed the model to learn more than linear models
@@ -246,6 +248,7 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
   - Because the data is district-wise, predictions can provide insight on district=specific solutions
 - In the deployment app, combining prediction SHAP analysis with agentic websearching and interpretation can provide
   a district-specific explanation on what influences IMR and suggestions on how to lower it, thus improving public health.
+- A demonstration of the agentic AI and explainable AI integration can be seen [here](https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/Deployment%20Agent%20Demo.pdf)
 
 ## Conclusion
 ## Future Work
