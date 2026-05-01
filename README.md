@@ -50,6 +50,7 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 ![Missingness matrix for features with 44 null values](https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/msno_44.png)
 
 **Data Leakage**
+![High correlations with target variable](https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/target_correlations.png)
 
 ## Data Preprocessing
 ## Modeling Approach
