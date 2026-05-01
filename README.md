@@ -107,7 +107,7 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 - Feature selection was split into a two part strategy:
 
 *Part 1:*
-In order to retain feature identities, we wanted to avoid PCA at the start, however, the multicollinearity identified in EDA would pose a challange for feature selection.
+- In order to retain feature identities, we wanted to avoid PCA at the start, however, the multicollinearity identified in EDA would    pose a challange for feature selection.
 - To avoid the multicollinearity issue, the featureset was split into 20 subgroups
   - Because most multicollinearity existed between features with the same prefix (AA, BB, etc.), each group
     was made to minimize the number of features with the same prefix.
@@ -127,10 +127,35 @@ In order to retain feature identities, we wanted to avoid PCA at the start, howe
 
 *End Result:*
 - 14 components that made up the featureset
-- In other words, the featureset was reduced from 643 &rarr; 50 &rarr; 14
+- In summary, the featureset was reduced from 643 &rarr; 50 &rarr; 14
 
 ## Modeling Approach
+- Numerous models were attempted, including linear models, tree-based models, and an artificial neural network (ANN)
+- ANN was the strongest and finalized approach, but was based on the failures of linear and tree-based models.
+- *Linear models:*
+  - Due to the linear relationship present in the dataset, linear models proved to be proficient with both good accuracy
+    and a balanced fit
+  - However, linear models are simple and lack depth for stronger learning
+- *Tree models:*
+  - Tree models were attempted to search for nonlinear relationships
+  - Every tree model, even at low complexity, was overfitting
+- *ANN: The final approach*
+  - ANN models are inherently linear as each layer is a sum of slopes and biases
+  - Nonlinearity can be added via activation functions
+  - Strategy:
+    - Create a mostly linear ANN with a single activation function before the output layer
+    - This adds enough comlexity to overcome the training plateaus experienced by the linear models
+      without overfitting to the same extent as the tree-based models
+  - Structure:
+    - 1 input layer
+    - 1 20% dropout layer (regularization: force the model to explore different pathways and options)
+    - 3 hidden layers
+    - 1 ReLU activation layer (adds nonlinearity)
+    - 1 output layer
+
 ## Model Training
+*ANN training structure:*
+- 
 ## Results
 ## Model Interpretation
 ## Key Insights
