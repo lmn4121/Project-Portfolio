@@ -308,7 +308,28 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
   - Prompts could be improved to better guide the SHAP explanations
 
 ## How to Run
-
+1. Install the dependencies
+   - These can be found in requirements.txt
+   - Note that these include the dependecies for the notebooks and the deployment app
+2. Run the preprocessing
+   - For the notebooks:
+     - The resulting data from each notebook, including the preprocessed data, is includeed in the data folder
+     - More information on the provided data in the next section
+   - For the deployment app:
+     - The preprocesser is built in
+       - Just ensure that there are no missing values
+     - Sample data to test the app is provided
+3. Train the models
+   - If using the correct provided data, only the Final_Strategy_and_Modeling.ipynb notebook needs to be used
+     to train the models shown in this report
+   - If using the original data, run the notebooks in the following order:
+     1. EDA_Baseline_Cleaning.ipynb
+     2. Feature_Selection.ipynb
+     3. Final_Strategy_and_Modeling.ipynb
+   - The trained ANN (deployment_model.pth) and mini ANN (ann_mini.pth) are provided in the models folder
+     - These are native to PyTorch
+4. Evaluate the results
+   - SHAP explainability is provided in the Final_Strategy_and_Modeling.ipynb notebook
 
 ## Repository Structure
 ## Requirements
