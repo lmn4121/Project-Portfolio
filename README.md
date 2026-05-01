@@ -32,7 +32,7 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 - This data is tabular
 - There are 284 rows where each row represents a district in India
 - There are 643 features excluding the target variable
-  - <ins>Key Feature<\ins>: Each feature belongs to one of 26 classifications, indicated by a two letter prefix (AA, BB, etc.)
+  - <ins>Key Feature</ins>: Each feature belongs to one of 26 classifications, indicated by a two letter prefix (AA, BB, etc.)
 
 
 ## Key Exploratory Data Analysis (EDA)
