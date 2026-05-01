@@ -32,9 +32,7 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 - This data is tabular
 - There are 284 rows where each row represents a district in India
 - There are 643 features excluding the target variable
-  - Each feature belongs to one of 26 classifications, indicated by a two letter prefix (AA, BB, etc.)
-
-**Key Features:**
+  - <ins>Key Feature<\ins>: Each feature belongs to one of 26 classifications, indicated by a two letter prefix (AA, BB, etc.)
 
 
 ## Key Exploratory Data Analysis (EDA)
@@ -349,6 +347,16 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
     - It fits the preprocesser that is built in
 
 **deployment folder:**
+- streamlit_app.py
+  - The main app
+  - Requires two updates for usage:
+    - A Google Gemini API key from (Google AI Studio)[https://aistudio.google.com/]
+    - A Tavily API key from (Tavily)[https://app.tavily.com/]
+    - Both of these API keys can be retrieved for free
+- All other files are dependencies used by the app
+  - Preprocesser tools
+  - Predefined information
+  - etc.
 
 **images folder:**
 - AA_heatmap.png
