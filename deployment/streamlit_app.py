@@ -390,7 +390,7 @@ async def agentic_insight(context_map, district):
                           output_type=WebSearchPlan)
 
     # Define a writer agent
-    # Writes a report based on the search agent's output
+    # Writes the 
     INSTRUCTIONS_WRITER = (
         f"You are a senior researcher tasked with writing a cohesive report regarding infant mortality rate in {district}."
         "You will be provided with some initial research done by a research assistant.\n"
