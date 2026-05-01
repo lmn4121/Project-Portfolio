@@ -332,4 +332,30 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
    - SHAP explainability is provided in the Final_Strategy_and_Modeling.ipynb notebook
 
 ## Repository Structure
+**data folder:**
+- capstone_data.csv
+  - Starting district-wise dataset sourced from [Kaggle](https://www.kaggle.com/datasets/rajanand/key-indicators-of-annual-health-survey)
+- Key_indicator_statewise.csv
+  - Another state-wise dataset that was also provided by [Kaggle](https://www.kaggle.com/datasets/rajanand/key-indicators-of-annual-health-survey)
+- postproc_comp.csv
+  - The processed dataset resulting from the EDA_Baseline_Cleaning.ipynb notebook
+  - This is the input data for the Feature_Selection.ipynb notebook
+- df_imp.csv
+  - This is the datset resulting from the Feature_Selection.ipynb notebook
+  - It contains only the 50 selected features following stage 1 of the feature selection process
+  - This is the input data for the Final_Strategy_and_Modeling.ipynb notebook
+- sample_data.csv
+  - This is a sample of data to test the deployment app
+    - It fits the preprocesser that is built in
+
+**deployment folder:**
+
+**images folder:**
+
+**models folder:**
+
+**notebooks folder:**
+
+**results folder:**
+
 ## Requirements
