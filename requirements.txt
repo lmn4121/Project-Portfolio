@@ -1,1 +1,14 @@
-
+streamlit
+streamlit-extras
+pillow
+scikit-learn
+numpy
+pandas
+matplotlib
+torch
+shap
+streamlit-shap
+openai
+tavily-python
+pydantic
+openai-agents
