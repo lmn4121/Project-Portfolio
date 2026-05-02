@@ -1,4 +1,52 @@
 # Empowered Action: An Infant Mortality Rate Study
+## Contents
+- [The Problem](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#the-problem)
+  - The main problem statement and why it matters
+- [Project Overview](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#project-overview)
+  - The project goal
+  - The approach
+  - Key results
+- [Data](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#data)
+  - Description and source of the dataset used
+- [Key Exploratory Data Analysis](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#key-exploratory-data-analysis-eda)
+  - Most important observations from EDA
+    - Target variable distribution
+    - Multicollinearity
+    - Null value overview
+    - Data leakage observations
+- [Data Preprocessing](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#data-preprocessing)
+  - Null values
+  - Data leakage
+  - Encoding
+  - Scaling
+  - Outliers
+  - Feature selection
+- [Modeling Approach](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#modeling-approach)
+  - Overview of attempted models
+    - Linear models
+    - Tree-based models
+    - ANN strategy and structure
+- [Model Training](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#model-training)
+  - Overview of noteable models and their hyperparameters
+    - AdaBoost Linear Regression
+    - Random Forest
+    - ANN (hyperparamters and training loop)
+- [Results](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#results)
+  - Explanation of the evaluation metrics
+  - Comparison of noteable models
+- [Model Interpretation](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#model-interpretation)
+  - SHAP explanation and interpretation of the strongest model (ANN)
+- [Key Insights](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#key-insights)
+  - What worked?
+  - Applications for the model
+- [Conclusion/Summary](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#conclusionsummary)
+  - Full summary of the project
+- [Future Work](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#future-work)
+- [How to Run](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#how-to-run)
+  - Instructions for how to run the notebooks and the deployment model
+- [Repository Structure](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#repository-structure)
+  - Breakdown and explanation of the repostiory's contents
+- [Requirements](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project#requirements)
 ## The Problem
 According to the Annual Health Survey in India, 9 states were identified as "lagging behind" in terms of public health. Infant Mortality Rate (IMR) is a key represetation of the public health for a given region. Thus, the problem was to identify the greatest influences over IMR. \
 <ins>Why this matters:</ins> Identifying the contributing factors to IMR can help develop district-specific plan for improving public health and reducing infant deaths.
@@ -40,7 +88,7 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
   - States identified as "lagging behind" in terms of public health
 
 ## Key Exploratory Data Analysis (EDA)
-**Target Variable Distribution:** /
+**Target Variable Distribution:**
 - The target variable (total IMR) was normally distributed with a mean and median ~55
   - This implied that there shouldn't be a major outlier problem within the target variable
 <img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/target_distribution.png" width=50%>
