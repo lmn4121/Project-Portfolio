@@ -383,7 +383,10 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 - ann_mini.pth
   - Mini ANN model that only uses 14 inputs
 - deployment_model.pth
-  - the full ANN model that uses 50 features compressed into 14 components
+  - The full ANN model that uses 50 features compressed into 14 components
+- best_ann.pt
+  - The weights for the best ANN model
+  - used in the Final_Strategy_and_Modeling.ipynb notebook
 - Notes:
   - These are the models included in the deployment app
   - Both models are native to PyTorch
