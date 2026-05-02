@@ -275,7 +275,9 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
  <img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/ann_beeswarm.png" width=50%>
 
  **Local Explanation:**
-- SHAP waterfall plot showing an example of how features contribute to a single prediction
+- SHAP waterfall plot showing an example of how features contribute to a single accurate prediction
+- The greatest contributors to increasing IMR are Neo Natal, lack of BCG vaccination coverage, and death rate.
+- A major contributor to decreasing IMR is general vaccination coverage
 <img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/accurate_pred_wf.png" width=50%>
 
 ## Key Insights
