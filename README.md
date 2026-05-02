@@ -372,6 +372,9 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
   - Example of the agent interpretation outputs from the deployment app
 - ann_beeswarm.png
   - SHAP beeswarm plot for the ANN model
+- cluster_img.png
+  - A diagram of the clusters and their features
+  - Used in the feature selection portion of the Preprocessing section
 - msno_44.png
   - Missingness matrix for features missing 44 values
   - Used to demonstrate the null value pattern
