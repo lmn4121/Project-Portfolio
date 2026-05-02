@@ -276,7 +276,7 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
 
  **Local Explanation:**
 - SHAP waterfall plot showing an example of how features contribute to a single prediction
-<img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/accurate_pred_wf.png" width=50%>
+<img src="" width=50%>
 
 ## Key Insights
 **What Worked?**
