@@ -126,6 +126,8 @@ According to the Annual Health Survey in India, 9 states were identified as "lag
   - Each cluster became one principal component
   - Because the features in each cluster were known, each component could be assigned an identity based on
     the features that contributed to it
+- The image below shows a summary of the clusters and the features that compose them
+<img src="https://github.com/lmn4121/Project-Portfolio/blob/Capstone-Project/images/cluster_img.png" width=50%>
 
 *End Result:*
 - 14 components that made up the featureset
