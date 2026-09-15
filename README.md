@@ -1,4 +1,4 @@
-# Data4390 Computer Vision: Chest X-Ray Classification
+# DATA 4380 Computer Vision: Chest X-Ray Classification
 
 ## Contents
 - [The Problem](#the-problem)
@@ -8,107 +8,116 @@
 - [Final Modeling Approach](#final-modeling-approach)
 - [Results](#results)
 - [Key Insights](#key-insights)
+- [Reports](#reports)
 - [How to Run](#how-to-run)
 - [Repository Structure](#repository-structure)
 
 ## The Problem
-Classify chest X-ray images into one of three categories: **Covid**, **Normal**, or **Viral Pneumonia**.
+Classify chest X-ray images into one of three categories: **COVID-19**, **Normal** (healthy lungs), or **Viral Pneumonia**.
 
-This was a course project for **DATA 4390** and my first project focused on computer vision.
+This was a **DATA 4380: Data Problems** course project (University of Texas at Arlington) and my first project focused on computer vision.
+
+**Research framing (from the written report):** Can deep learning on chest X-rays differentiate healthy individuals from those with COVID-19 or viral pneumonia—and serve as a precedent for AI-assisted screening alongside standard nucleic acid testing?
 
 ## Project Overview
 **Goal:**
-- Build an image classifier that distinguishes Covid, Normal, and Viral Pneumonia chest X-rays
-- Practice core computer vision techniques: CNNs, augmentation, class imbalance handling, and transfer learning
+- Build an image classifier that distinguishes COVID-19, normal, and viral pneumonia chest X-rays
+- Practice core computer vision techniques: CNNs, augmentation, class-imbalance handling, and transfer learning
 
 **Approach:**
-- Explore the dataset and class balance
-- Prototype simple models (fully connected network and small CNNs)
-- Try transfer learning with VGG16 and DenseNet201
-- Finalize a DenseNet201 fine-tuning setup based on instructor guidance and examples
+- Explore the dataset, class balance, and how hard Normal vs Pneumonia are to tell apart visually
+- Prototype simple baselines (ANN and a small CNN)
+- Method 1: CLAHE + oversampling-style augmentation with a deeper CNN and frozen VGG16
+- Method 2 (final): geometric augmentation + class weights with fine-tuned **DenseNet201**
 
-**Key Results (final DenseNet201 model):**
-- Held-out test set (**66** images): overall accuracy **0.88**
-- Per-class test F1: Covid **0.96**, Normal **0.80**, Viral Pneumonia **0.86**
-- Macro-average precision / recall / F1 on that report: **0.87**
+**Key Results (final DenseNet201 model, from the written report):**
+- Validation macro F1: **0.92**
+- Test macro F1: **0.83**
+- Validation F1 stability (30 repeated predicts): mean/median **0.85**, std **0.03**, range **0.12**
 
 ## Data
-**Dataset (as used in the notebook):**
-- Local / Google Drive folder named `Covid19-dataset`
-- Three class folders corresponding to **Covid**, **Normal**, and **Viral Pneumonia**
-- Images loaded and resized for training (student exploration used **256×256**; the final DenseNet pipeline used **224×224**)
+**Source:** [COVID-19 Image Dataset (Kaggle)](https://www.kaggle.com/datasets/pranavraikokte/covid19-image-dataset) — Pranav Raikote
 
-**Splits used for the final DenseNet pipeline** (`ImageDataGenerator`, `validation_split=0.2` on the train folder):
-- Train: **201** images
-- Validation: **50** images
-- Test: **66** images (from the separate `test` folder)
+**Classes:**
+- COVID-19 (majority)
+- Normal
+- Viral Pneumonia
 
-**Class imbalance (student training folder counts):**
-- Covid: **111**
-- Normal: **70**
-- Viral Pneumonia: **70**
+**Size / splits used in exploration:**
+- Total: **317** images (small dataset)
+- Typical exploration split: Train **251** (~80%) / Validation **33** (~10%) / Test **33** (~10%)
+- Train class counts: COVID-19 **111** (~44%), Normal **70** (~28%), Pneumonia **70** (~28%)
 
-Balanced **class weights** were used when fitting the final model.
+**Splits used for the final DenseNet pipeline:**
+- Train: **201** (~63%)
+- Validation: **50** (~16%)
+- Test: **66** (~21%)
 
-> Note: The notebook references a Drive path only. A public dataset citation is not recorded in the notebook, so this README does not invent one.
+Images were rescaled to \[0, 1\]. Final DenseNet inputs were **224×224**.
 
 ## Exploration
-Early work treated this as an introduction to computer vision. Experiments included:
+Early work treated this as an introduction to computer vision:
 
-- Simple **ANN** (flatten → dense layers)
-- Small **CNNs** from scratch
-- **CLAHE**-style contrast enhancement and geometric / photometric augmentation
-- Transfer learning with **VGG16** and **DenseNet201** (frozen bases, then limited unfreezing)
+- **ANN baseline** and a **one-block CNN** — both struggled (near-random / severe overfitting on this small set)
+- **CLAHE** contrast enhancement combined with minority-class oversampling-style augmentation
+- Deeper **CNN from scratch** and frozen **VGG16** transfer learning (Method 1) — improved training behavior but still weak on minority classes / validation
 
-These runs informed preprocessing and architecture choices. They are not the published end results.
+These runs informed preprocessing and architecture choices. They are exploration, not the published end results.
 
 ## Final Modeling Approach
-The final model follows an instructor-advised DenseNet setup that I reproduced and trained:
+**Method 2 — DenseNet201 fine-tuning** (instructor-guided setup I reproduced):
 
 **Architecture:**
 - Backbone: **DenseNet201** pretrained on **ImageNet** (`include_top=False`)
 - Head: **GlobalAveragePooling2D** → **Dropout(0.3)** → **Dense(3, softmax)**
 
-**Training setup:**
-- Input size: **224×224**, batch size **16**
-- Augmentation (train): rescale `1/255`, rotation (±15°), shear / zoom / shift (0.1), horizontal flip
-- Loss: `categorical_crossentropy`
-- Fine-tuning: unfreeze the last **40** DenseNet layers
-- Optimizer: **Adam** with learning rate **1e-5**
-- Epochs: **25**
-- **Class weights** applied for imbalance
+**Strategy:**
+- Unfreeze later DenseNet convolutional layers (written report: last **43** layers) so the backbone can adapt from ImageNet toward X-ray appearance
+- Use **class weights** instead of oversampling for imbalance
+- Apply geometric augmentation at load time: horizontal flip, shear/zoom/shift (0.1), rotation (±15°)
+
+**Training:**
+- Optimizer: **Adam**, learning rate **1e-5**
+- Epochs: **25**, batch size **16**
+- Loss: categorical cross-entropy
 
 ## Results
-### Test set (named-class classification report)
-| Class | Precision | Recall | F1 | Support |
-|-------|-----------|--------|----|---------|
-| Covid | 1.00 | 0.92 | 0.96 | 26 |
-| Normal | 0.80 | 0.80 | 0.80 | 20 |
-| Viral Pneumonia | 0.82 | 0.90 | 0.86 | 20 |
-| **Overall accuracy** | | | **0.88** | **66** |
+### Final DenseNet201 (written report)
+| Split | Macro F1 | Notes |
+|-------|----------|-------|
+| Validation | **0.92** | Strongest held-out-in-training metric |
+| Test | **0.83** | Gap vs validation indicates variance on a small set |
 
-Macro-average precision / recall / F1 on this report: **0.87**.
+Confusion matrices in the report show the main failure mode is **Normal vs Viral Pneumonia**; COVID-19 is the strongest class.
 
-### Training / validation (final fit)
-- Final epoch validation accuracy: **0.84** (train accuracy ≈ **0.85**)
+### Validation F1 stability
+30 repeated validation predictions (augmentation can vary): mean/median F1 **0.85**, std **0.03**, range **0.12**.
 
-### Validation F1 stability check
-Repeated prediction on the validation generator (30 runs; augmentation can vary) produced validation F1 with mean / median **0.85**, std **0.03**.
+### Method 1 (exploration, for context)
+- Deeper CNN after CLAHE/oversampling: train macro F1 ~**0.49**, but validation remained poor (including failure on the Normal class in the report)
+- Frozen VGG16: train/val macro F1 ~**0.50** / **0.47**
 
 ## Key Insights
-- Transfer learning with a modern CNN backbone was far more practical than training deep networks from scratch on a small medical image set
-- Class imbalance mattered; balanced class weights were part of the final training setup
-- Augmentation and a careful train/validation split on the training folder helped stabilize learning before evaluating on the held-out test folder
-- Covid was the strongest class in the final test report; Normal was the hardest of the three
+- Fine-tuning a heavy transfer model beat building CNNs from scratch on this small medical set
+- ImageNet initialization helps, but is not X-ray-specific—variance and Normal↔Pneumonia confusion remain the main limits
+- Macro F1 (and recall) matter more than raw accuracy under slight class imbalance and a contagious-disease framing
+- The model is better framed as a **screening aid** (potential positive / not) than as a standalone diagnostic, matching the report’s conclusion
+
+## Reports
+Course writeups included on this branch:
+- `Nguyen_Landon_DATA4380_Report.pdf` — full written report (methods, results, conclusion)
+- `Data4380_Covid19_Presentation.pdf` — slide-style project presentation
 
 ## How to Run
-1. Place the `Covid19-dataset` folder so that it contains `train/` and `test/` class subfolders (matching the notebook’s expected layout)
-2. Open `Data4390_Computer_Vision.ipynb` in Jupyter or Google Colab (GPU recommended)
-3. Update any Drive / local paths to point at your dataset copy
-4. Run cells in order; the final DenseNet section is labeled around the instructor-guided fine-tuning workflow near the end of the notebook
+1. Download the [Kaggle COVID-19 Image Dataset](https://www.kaggle.com/datasets/pranavraikokte/covid19-image-dataset) so it has `train/` and `test/` class folders
+2. Open `Data4380_Computer_Vision.ipynb` in Jupyter or Google Colab (GPU recommended)
+3. Point Drive / local paths at your dataset copy
+4. Run cells in order; the final DenseNet fine-tuning section is near the end of the notebook
 
 Dependencies used in the notebook include TensorFlow / Keras, OpenCV, scikit-learn, NumPy, Matplotlib, and Seaborn.
 
 ## Repository Structure
 - `README.md` — this summary (goal, techniques, results)
-- `Data4390_Computer_Vision.ipynb` — full exploration notebook plus the final DenseNet201 fine-tuning and evaluation
+- `Data4380_Computer_Vision.ipynb` — exploration notebook plus final DenseNet201 fine-tuning and evaluation
+- `Nguyen_Landon_DATA4380_Report.pdf` — written project report
+- `Data4380_Covid19_Presentation.pdf` — presentation slides
