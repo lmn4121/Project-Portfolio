@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field
 from langchain_core.documents import Document
 from litellm import completion
 from tqdm import tqdm
+from multiprocessing import Pool
 
 # load the environment variables
 load_dotenv()
@@ -22,6 +23,7 @@ DB_NAME = "twin_db"
 EMBEDDING_MODEL = "text-embedding-3-large"
 AVERAGE_CHUNK_SIZE = 100
 CHUNKING_MODEL = "gpt-4.1-nano"
+WORKERS = 3
 
 # define chunk structure
 class Chunk(BaseModel):
@@ -93,10 +95,11 @@ def process_document(document):
     doc_as_chunks = Chunks.model_validate_json(reply)
     return [chunk.as_result(document) for chunk in doc_as_chunks.chunks]
 
-def create_chunks(documents):
+def create_chunks(documents): # create chunks with pool for multiprocessing
     chunks = []
-    for doc in tqdm(documents):
-        chunks.extend(process_document(doc))
+    with Pool(processes=WORKERS) as pool:
+        for result in tqdm(pool.imap_unordered(process_document,documents), total=len(documents)):
+            chunks.extend(result)
     return chunks
 
 # create the vector store
