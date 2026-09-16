@@ -30,6 +30,7 @@ This project builds a **chatbot digital twin of Landon Nguyen** that discusses b
 ### `ingest.py` — Knowledge base build
 - Loads `**/*.md` from `twin_reference_base/` via LangChain `DirectoryLoader` / `TextLoader`
 - Uses a **custom semantic chunking** strategy: `gpt-4.1-nano` (via LiteLLM) returns structured chunks (`headline`, `summary`, exact `content`) with intended overlap
+- Parallelizes chunking across documents with a multiprocessing pool
 - Embeds chunks with OpenAI **`text-embedding-3-large`** into a persistent Chroma store (`twin_db`)
 
 ### `twin.py` — Agent digital twin
@@ -57,12 +58,16 @@ This project builds a **chatbot digital twin of Landon Nguyen** that discusses b
 - End-to-end twin chatbot that answers resume- and project-oriented questions using RAG when needed
 - Lead-capture and unknown-question tools so unanswered or off-resume gaps can be recorded instead of invented
 - Interactive Gradio demo for local (and future hosted) use
+- Prebuilt `twin_db/` Chroma store included so the twin can run without re-ingesting from scratch
 
 ## How to Run
-1. Install dependencies used by the scripts (including Gradio, LangChain / Chroma / OpenAI embeddings, OpenAI Agents SDK, LiteLLM, `pypdf`, `python-dotenv`, etc.)
+1. Create a virtual environment and install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 2. Configure environment variables in a `.env` (at minimum OpenAI credentials; Pushover user/token for notification tools)
-3. Ensure `Nguyen_Landon_CV.pdf` and `twin_reference_base/` are present (as in this branch)
-4. Build the vector store:
+3. Ensure `Nguyen_Landon_CV.pdf`, `twin_reference_base/`, and `twin_db/` are present (as in this branch)
+4. *(Optional)* Rebuild the vector store after editing reference docs:
    ```bash
    python ingest.py
    ```
@@ -75,7 +80,9 @@ This project builds a **chatbot digital twin of Landon Nguyen** that discusses b
 - `app.py` — Gradio digital-twin chat UI
 - `twin.py` — agent, tools, and streaming chat
 - `ingest.py` — semantic chunking + Chroma ingest
+- `requirements.txt` — pinned Python dependencies
 - `Nguyen_Landon_CV.pdf` — resume loaded into twin instructions
 - `twin_reference_base/` — markdown knowledge sources by topic (`capstone_project/`, `computer_vision/`, `general/`, `llm_ai_engineering/`, `other_projects/`)
-- `twin_db/` — Chroma persistence directory created by `ingest.py` (local run)
+  - includes `llm_ai_engineering/twin_summary.md` (copy of this README for the twin’s knowledge base)
+- `twin_db/` — prebuilt Chroma persistence directory used by the twin (can be rebuilt with `ingest.py`)
 - `memory.db` — chat session store created at runtime
