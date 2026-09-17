@@ -1,0 +1,16 @@
+# Twin API (FastAPI) — production path (no Gradio)
+# Core agent/RAG deps pinned from Digital-Twin working env
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
+chromadb==1.5.9
+langchain-chroma==1.1.0
+langchain-community==0.4.2
+langchain-core==1.4.2
+langchain-openai==1.2.2
+litellm==1.101.0
+openai==2.34.0
+openai-agents==0.15.1
+pydantic==2.13.3
+pypdf==6.10.2
+python-dotenv==1.2.2
+tqdm==4.67.3

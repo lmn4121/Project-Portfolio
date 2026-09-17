@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Syne, Figtree } from "next/font/google";
+import { ChatWidget } from "@/components/ChatWidget";
 import "./globals.css";
 
 const display = Syne({
@@ -34,7 +35,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* Floating twin — after main content so it never owns the hero viewport */}
+        <ChatWidget />
+      </body>
     </html>
   );
 }

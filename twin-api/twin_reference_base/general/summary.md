@@ -2,30 +2,6 @@
 
 Collection of projects by **Landon Nguyen** — Data Scientist / AI Engineering.
 
-## Portfolio website
-
-Next.js site at the repo root (this branch / PR), with a floating **Ask Landon’s twin** chat widget.
-
-```bash
-npm install
-cp .env.example .env.local   # set NEXT_PUBLIC_TWIN_API_URL
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000). Production: `npm run build && npm start`.
-
-### Vercel
-
-1. Import this repo; root directory = `.` (Next.js).
-2. Set **one** env var: `NEXT_PUBLIC_TWIN_API_URL` = your twin API public HTTPS URL.
-3. Deploy. No OpenAI keys in Vercel.
-
-### Digital Twin API
-
-Always-on Python service lives in [`twin-api/`](./twin-api/). See that README for Railway/Render/Fly/Docker, CORS (`PORTFOLIO_ORIGINS`), and secrets (`OPENAI_API_KEY`, optional `PUSHOVER_*`).
-
-`Portfolio-Website` was not available at implementation time (404); twin + widget ship together here on `Project-Portfolio` until a dedicated site repo exists.
-
 ## About
 
 I’m a data science student at **The University of Texas at Arlington** in the Fastrack program (**B.S. Data Science** with a Biology concentration and Mathematics minor; **M.S. Applied Statistics and Data Science**, expected **December 2027**; GPA **3.9**).
@@ -39,7 +15,7 @@ I have about **6 years** of programming experience and **2 years** applying stat
 
 ## How this repo is organized
 
-The portfolio site + `twin-api/` live on the portfolio / integration branches. Each ML project lives on its **own branch** with its own README. The original Gradio twin remains on [`Digital-Twin`](https://github.com/lmn4121/Project-Portfolio/tree/Digital-Twin) for local demos.
+Each project lives on its **own branch** with its own README focused on techniques and results. Browse a branch to see the full write-up and code.
 
 ## Projects
 
@@ -63,10 +39,3 @@ WiDS Datathon 2024 Challenge 1: binary classification of whether a patient recei
 **Techniques:** Baselines (ANN/CNN), CLAHE and augmentation, frozen VGG16 exploration, final fine-tuned **DenseNet201** with class weights.
 
 **Results:** Final model **validation macro F1 0.92**, **test macro F1 0.83** (written report). Branch also includes the course report and presentation PDFs.
-
-### [Digital-Twin](https://github.com/lmn4121/Project-Portfolio/tree/Digital-Twin) — Resume Chatbot
-Conversational digital twin that answers questions about background, skills, and experience using the resume plus a project knowledge base.
-
-**Techniques:** LLM-assisted semantic chunking into Chroma (`ingest.py`); OpenAI Agents SDK twin with RAG tools (`twin.py`); production path is FastAPI + SSE in `twin-api/` with the portfolio widget (Gradio `app.py` for local demos).
-
-**Results:** Try the twin on the portfolio site via **Ask Landon’s twin**. Retrieval-grounded answers; tools record leads / unanswered questions instead of inventing replies.

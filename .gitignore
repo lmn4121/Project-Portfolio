@@ -29,7 +29,15 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files
+.env
 .env*.local
+!/.env.example
+
+# twin api local
+twin-api/.venv/
+twin-api/memory.db
+twin-api/__pycache__/
+
 
 # typescript
 *.tsbuildinfo

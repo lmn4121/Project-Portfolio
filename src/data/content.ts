@@ -159,12 +159,13 @@ export const projects: Project[] = [
     branchUrl:
       "https://github.com/lmn4121/Project-Portfolio/tree/Digital-Twin",
     techniques:
-      "LLM-assisted semantic chunking into Chroma; OpenAI Agents SDK twin with RAG, email capture, and unknown-question tools; Gradio streaming chat UI.",
+      "LLM-assisted semantic chunking into Chroma; OpenAI Agents SDK twin with RAG, email capture, and unknown-question tools; FastAPI + SSE API for the portfolio chat widget (Gradio kept for local demos).",
     result:
-      "End-to-end twin chatbot with retrieval-grounded answers and tools to record leads / unanswered questions instead of inventing replies.",
+      "Try it on this site via Ask Landon’s twin — retrieval-grounded answers with tools to record leads / unanswered questions instead of inventing replies.",
     bullets: [
       "Built agentic applications using OpenAI Agents SDK, including a digital twin and an automated email workflow.",
       "Implemented Retrieval-Augmented Generation (RAG) to provide business-specific context to LLMs.",
+      "Exposed the twin as an always-on API and embedded a native portfolio chat widget (no OpenAI keys in the browser).",
     ],
   },
 ];
