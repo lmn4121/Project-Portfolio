@@ -10,6 +10,7 @@ import asyncio
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 # other imports
+import requests
 from pypdf import PdfReader
 
 # load the environment variables
@@ -18,7 +19,7 @@ load_dotenv(override=True)
 # Global Variables
 pushover_user = os.getenv("PUSHOVER_USER")
 pushover_token = os.getenv("PUSHOVER_TOKEN")
-pusover_url = "https://api.pushover.net/1/messages.json"
+pushover_url = "https://api.pushover.net/1/messages.json"
 MODEL_NAME = "gpt-5.4-mini"
 
 DB_NAME = "twin_db"
@@ -32,6 +33,7 @@ session = SQLiteSession("12345", "memory.db")
 def push(message):
     print(f"Push: {message}")
     payload = {"user": pushover_user, "token": pushover_token, "message": message}
+    requests.post(pushover_url, data=payload)
 
 async def clear_history(session):
     await session.clear_session()
@@ -96,8 +98,8 @@ potential employer. Only answer questions related to your background, skills,
 and experience. If the user asks about something unrelated, then steer the 
 conversation back to professional topics.
 
-Whenever the user asks a question, you must use your tool to retrieve information
-that might be relevant to the question.
+Whenever the user asks a question about your background, skills, or experience,
+you must use your tool to retrieve information that might be relevant to the question.
 
 Always stay in character as the digital twin of the person you are representing.
 
