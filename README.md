@@ -4,11 +4,17 @@ Collection of projects by **Landon Nguyen** — Data Scientist / AI Engineering.
 
 ## About
 
-I’m a data science student at **The University of Texas at Arlington** in the Fastrack program (**B.S. Data Science** with a Biology concentration and Mathematics minor; **M.S. Applied Statistics and Data Science**, expected **December 2027**; GPA **3.9**).
+I’m a data science student at **The University of Texas at Arlington** in the Fastrack dual-track program (**B.S. Data Science** with a Biology concentration and Mathematics minor; **M.S. Applied Statistics and Data Science**, expected **December 2027**; GPA **3.9**).
 
-I have about **6 years** of programming experience and **2 years** applying statistical, data mining, and machine learning methods to research and data-driven problems. I’m especially interested in combining **AI engineering** with data science to build intelligent and autonomous systems.
+I have about **6 years** of programming experience and **3 years** applying statistics and machine learning to data-driven problems. I build and deploy ML and LLM applications, from explainable neural networks to RAG systems and AI agents.
 
-**Core toolkit (from resume):** Python, SQL, R, SAS; NumPy/Pandas/scikit-learn; TensorFlow/Keras and PyTorch; LLMs, RAG, and agent tooling.
+**Coursework (current / upcoming):** Statistical Analysis with SAS; Linear Algebra and Statistics with R; Advanced Regression Analysis; Machine Learning Applications; Data Mining with Information Visualization.
+
+**Self-study & planned focus:** LLM engineering (RAG, QLoRA, Hugging Face); agentic AI (Agents SDK, CrewAI, LangGraph, MCP, Guardrails); AI in production (AWS Bedrock, Terraform, CI/CD, LangFuse); Azure Databricks, PySpark, Delta Lake.
+
+**Certifications:** IBM Machine Learning with Python; IBM Machine Learning Methodology; PyTorch for Deep Learning.
+
+**Core toolkit (from resume):** Python, SQL, R, SAS; NumPy/Pandas/SciPy/scikit-learn; TensorFlow/Keras and PyTorch; SHAP, OpenAI APIs / Agents SDK, RAG; ChromaDB, Streamlit, Gradio, Render; Git/GitHub.
 
 **Resume:** [Landon_Nguyen_Resume.pdf](./Landon_Nguyen_Resume.pdf)  
 (Contact details are in the PDF.)
@@ -20,7 +26,7 @@ Each project lives on its **own branch** with its own README focused on techniqu
 ## Projects
 
 ### [Capstone-Project](https://github.com/lmn4121/Project-Portfolio/tree/Capstone-Project) — Infant Mortality Rate Study
-Undergraduate capstone (**DATA-4332**): predict infant mortality rate (IMR) for districts in India’s Empowered Action Group states using Annual Health Survey indicators.
+Undergraduate capstone (**DATA-4381 & DATA-4382**): predict infant mortality rate (IMR) for districts in India’s Empowered Action Group states using Annual Health Survey indicators.
 
 **Techniques:** EDA (leakage, multicollinearity, missingness), state-wise imputation, robust scaling, forward selection + agglomerative clustering/PCA (643 → 50 → 14 features), linear and tree baselines, final **ANN**, SHAP explainability, Streamlit deployment with XAI + agentic interpretation.
 
@@ -43,6 +49,6 @@ WiDS Datathon 2024 Challenge 1: binary classification of whether a patient recei
 ### [Digital-Twin](https://github.com/lmn4121/Project-Portfolio/tree/Digital-Twin) — Resume Chatbot
 Conversational digital twin that answers questions about background, skills, and experience using the resume plus a project knowledge base.
 
-**Techniques:** LLM-assisted semantic chunking into Chroma (`ingest.py`); OpenAI Agents SDK twin with RAG, email capture, and unknown-question tools (`twin.py`); Gradio streaming chat UI (`app.py`).
+**Techniques:** LLM-assisted semantic chunking into Chroma (`ingest.py`); OpenAI Agents SDK twin with RAG, email capture, and unknown-question tools (`twin.py`); Gradio streaming chat UI (`app.py`); deployed on **Render** and embedded in the portfolio as a chat widget (API key kept server-side).
 
 **Results:** End-to-end twin chatbot with retrieval-grounded answers and tools to record leads / unanswered questions instead of inventing replies. Branch includes `requirements.txt` and a prebuilt `twin_db/` vector store.
