@@ -57,6 +57,7 @@ Conversational digital twin that answers questions about background, skills, and
 
 The [Certificates](https://github.com/lmn4121/Project-Portfolio/tree/Certificates) branch holds the original certificate files with issuer, date, and verification links.
 
+- **Advanced Machine Learning Algorithms** (Fractal Analytics via Coursera, Oct 2026)
 - **AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents** (Udemy, Oct 2026)
 - **Introduction to R Programming for Data Science** (IBM via Coursera, Sep 2026)
 - **PyTorch for Deep Learning** Professional Certificate (DeepLearning.AI, Mar 2026)
