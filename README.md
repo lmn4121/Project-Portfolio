@@ -4,6 +4,7 @@ Certificates earned by **Landon Nguyen** in data science, machine learning, and 
 
 | Certificate | Issuer | Date | Verify |
 |---|---|---|---|
+| [Advanced Machine Learning Algorithms](./Fractal_Advanced_Machine_Learning_Algorithms.pdf) | Fractal Analytics via Coursera | Oct 12, 2026 | [coursera.org/verify/D29MMIUOTLCN](https://coursera.org/verify/D29MMIUOTLCN) |
 | [AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents](./Udemy_AI_Engineer_Core_Track_LLM_Engineering.pdf) (33.5 hours) | Udemy (Ligency, Ed Donner) | Oct 2, 2026 | [ude.my/UC-2712524f-0825-4273-b3e3-71b632c2e822](https://ude.my/UC-2712524f-0825-4273-b3e3-71b632c2e822) |
 | [Introduction to R Programming for Data Science](./IBM_Intro_to_R_Programming_for_Data_Science.pdf) | IBM via Coursera | Sep 3, 2026 | [coursera.org/verify/SXOKGJIW9Y7R](https://coursera.org/verify/SXOKGJIW9Y7R) |
 | [PyTorch for Deep Learning](./DeepLearningAI_PyTorch_for_Deep_Learning.png) (Professional Certificate, 3 courses) | DeepLearning.AI | Mar 30, 2026 | [learn.deeplearning.ai](https://learn.deeplearning.ai/certificates/565facd5-1b73-47e5-a723-2ba6c5ae8cd9) |
