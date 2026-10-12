@@ -52,3 +52,13 @@ Conversational digital twin that answers questions about background, skills, and
 **Techniques:** LLM-assisted semantic chunking into Chroma (`ingest.py`); OpenAI Agents SDK twin with RAG, email capture, and unknown-question tools (`twin.py`); Gradio streaming chat UI (`app.py`); deployed on **Render** and embedded in the portfolio as a chat widget (API key kept server-side).
 
 **Results:** End-to-end twin chatbot with retrieval-grounded answers and tools to record leads / unanswered questions instead of inventing replies. Branch includes `requirements.txt` and a prebuilt `twin_db/` vector store.
+
+## Certificates
+
+The [Certificates](https://github.com/lmn4121/Project-Portfolio/tree/Certificates) branch holds the original certificate files with issuer, date, and verification links.
+
+- **AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents** (Udemy, Oct 2026)
+- **Introduction to R Programming for Data Science** (IBM via Coursera, Sep 2026)
+- **PyTorch for Deep Learning** Professional Certificate (DeepLearning.AI, Mar 2026)
+- **Machine Learning with Python** (IBM via Coursera, Nov 2024)
+- **PCEP-30-02: Certified Entry-Level Python Programmer** (Python Institute, Apr 2024)
