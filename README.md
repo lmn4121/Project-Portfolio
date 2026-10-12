@@ -1,6 +1,6 @@
 # Project Portfolio
 
-Collection of projects by **Landon Nguyen** — Data Scientist / AI Engineering.
+Collection of projects by **Landon Nguyen** — Data Science / AI Engineering.
 
 ## About
 
